@@ -24,5 +24,3 @@ class AddEntryView(CreateView):
     form_class = JobPostForm
     template_name = 'jobs/addJobPost.html'
     success_url = reverse_lazy('home')
-
-
