@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ShortJobs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <h3><a href="{% url 'addJob' %}">Add Job Post +</a></h3>
+                    </div>
+                </div>
+            </article>
+
+            {% if tag %}
+            <h3>Posts tagged with "{{ tag.name }}"</h3><br />
+        {% endif %}
+            {% for post in posts %}
+            <article class="media" style="border-top:1px solid black;">
+                    
+                    <div class="content">
+                        <p>
+                            <strong>{{ post.date_posted }}</strong>
+                            <br>{{ post.text }}<br />
+                            <br>{{ post.description }}<br />
+                                {{ post.pay }}
+                            {% if post.photo %}
+                            <img src="{{ post.photo.url}}" alt="{{ post.title }}" 
+                            style="height:200px; width:200px;">
+                            {% endif %}
+
+                        </p>
+                        <p class="tags">
+                            {% if post.tags.first %}
+                            <hr />
+                            Tags: 
+                            {% for tag in post.tags.all %}
+                            <a href="{% url 'post_list_by_tag' tag.slug %}">
+                               {{  tag.name }} 
+                            </a>
+                            {% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                            {% else %}
+                            <!-- If there are no tags, leave empty -->
+                            {% endif %}
+                        </p>
+                    
+                </div>
+            </article>
+            {% endfor %}
+
+           
+        </div>
+
+    </section>
+    <footer class="footer">
+    </footer>
+</body>
+
+</html>
