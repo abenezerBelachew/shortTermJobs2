@@ -2,15 +2,18 @@
 <html lang="en">
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'jobs/style.css' %}">
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ShortJobs</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="{% static 'jobs/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
 </head>
 
 <body>
@@ -19,8 +22,8 @@
             <article class="media">
                 <div class="media-content">
                     <div class="content">
-                        <h3><a href="{% url 'addJob' %}">Add Job Post +</a></h3>
-                        <a>Hello there!</a>
+                        <h1 class="display-4 text-light"><a href="{% url 'addJob' %}">Add Job Post +</a></h1>
+                        <a class="font-italic">A place to find the right people for tiny but important jobs!</a>
                     </div>
                 </div>
             </article>

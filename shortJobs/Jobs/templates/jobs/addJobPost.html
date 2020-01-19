@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+{% load crispy_forms_tags %}
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add Job Post</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
 
 </head>
 
 <body>
-    <section class="section">
+    <section class="section bg-dark" style="margin-bottom: 20px;">
         <div class="container">
             <article class="media">
                 <div class="media-content">
-                    <div class="content">
-                        <h3><a href="{% url 'home' %}">Add Job Post +</a></h3>
+                    <div class="content" >
+                    <h1><a class="isplay-4 text-center text-light" href="{% url 'home' %}">Add Job Post +</a></h1>
                     </div>
                 </div>
             </article>
             </div>
     </section>
-<hr />
+
         <div class="container">
 
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="field">
                     <div class="control">
-                        {{ form.as_p }}
+                        {{ form|crispy }}
                     </div>
                 </div>
-                <div class="field is-grouped is-grouped-right">
+                <div class="field is-grouped is-grouped-left">
                     <div class="control">
-                        <button class="button is-link" type="submit">Submit</button>
+                        <button class="btn btn-dark" type="submit">Submit</button>
                     </div>
                 </div>
             </form>
