@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'taggit',
     'phonenumber_field',
     'crispy_forms'
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -138,3 +139,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
+

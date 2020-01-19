@@ -16,6 +16,7 @@
 <div class="mx-auto" style="width: 400px; padding-top:30px;">
 <form method="POST">
     {% csrf_token %}
+
     {{ form|crispy }}
     <button class="btn btn-dark" type="submit">Register</button>
 </form>

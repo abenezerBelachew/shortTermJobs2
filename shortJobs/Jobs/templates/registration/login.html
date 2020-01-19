@@ -15,6 +15,7 @@
 <div style="display: inline-block;">
 <form method="POST">
     {% csrf_token %}
+
     {{ form|crispy }}
     <button style="background-color: #4CAF50; /* Green */
     border: none;
