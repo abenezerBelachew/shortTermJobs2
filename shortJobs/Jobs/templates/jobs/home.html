@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'jobs/style.css' %}">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ShortJobs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'jobs/style.css' %}">
 </head>
 
 <body>
@@ -16,6 +20,7 @@
                 <div class="media-content">
                     <div class="content">
                         <h3><a href="{% url 'addJob' %}">Add Job Post +</a></h3>
+                        <a>Hello there!</a>
                     </div>
                 </div>
             </article>
