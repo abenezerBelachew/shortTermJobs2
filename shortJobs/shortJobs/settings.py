@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Jobs.apps.JobsConfig',
     'taggit',
     'phonenumber_field',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [

@@ -1,8 +1,38 @@
-<h1>Log in</h1>
+{% load crispy_forms_tags %}
+
+<h1 style="color:#4CAF50;text-align: center;">Log in</h1>
 
 <title>Login</title>
+<div style="text-align: center;">
+<div style="display: inline-block;">
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Log In</button>
+    {{ form|crispy }}
+    <button style="background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; margin-bottom: 2px;" type="submit">Log In</button>
+    
+
 </form>
+
+<form action="{% url 'register' %}">
+    <button style="background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; margin-bottom: 20px;" type="submit">Register</button>
+
+</form>
+
+</div>
+</div>
