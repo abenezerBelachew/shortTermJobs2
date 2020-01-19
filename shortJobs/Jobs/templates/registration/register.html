@@ -1,11 +1,25 @@
-<title>Register</title>
-<h1>Sign Up</h1>
+{% load static %}
+{% load crispy_forms_tags %}
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+
+<title>Register</title>
+<div class="bg-dark" style="padding-top: 20px; padding-bottom: 20px;">
+<h1 class="display-4 text-center text-light">Sign Up</h1>
+</div>
+
+{% comment %} <div style="text-align: center;"> {% endcomment %}
+<div class="mx-auto" style="width: 400px; padding-top:30px;">
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
-    <br /><br /><br />
-    Already have an account? 
-    <a href="{% url 'login' %}">Log In</a>
+
+    {{ form|crispy }}
+    <button class="btn btn-dark" type="submit">Register</button>
 </form>
+
+</div>
+</div>
