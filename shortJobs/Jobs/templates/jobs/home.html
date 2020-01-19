@@ -41,20 +41,30 @@
                             <br>{{ post.text }}<br />
                             <br>{{ post.description }}<br />
                                 <button class="text-success">${{ post.pay }}/hour</button>
-                            {% if post.photo %}
+                                <div class="container">
+                                    <div class="row">
+                                        
+                                         
+                                {% if post.photo %}
                             <br />
+                            <div class="col-xs-6">
                             <a href="{{ post.photo.url }}">
                             <img src="{{ post.photo.url}}" alt="{{ post.title }}" 
                             style="height:200px; width:200px;"></a>
+                            </div>  
                             {% endif %}
 
-                            {% if post.file %}
-                            <br />
-                            <a href="{{ post.file.url }}" target="_blank">
-                                {{ post.file.name }} </a> |<br /> Size: {{ post.file.size|filesizeformat }}
-                            
+                            {% if post.file %} 
+                            <div class="col-xs-6">
+                            <video width="320" height="240" controls>
+                                <source src="{{ post.file.url }}" type="video/mp4">
+                                <source src="{{ post.file.url }}" type="video/ogg">
+                              Your browser does not support the video tag.
+                              </video>
+                            </div>
+                           
                             {% endif %}
-
+                                    </div></p></div>
                         </p>
                         <div class="dropdown">
                             <button class="dropbtn">Show Employer Contact</button>
