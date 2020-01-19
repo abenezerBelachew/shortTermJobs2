@@ -9,6 +9,7 @@ class JobPost(models.Model):
     title = models.CharField(max_length=60)
     date_posted = models.DateTimeField(auto_now_add=True)
     description = models.TextField()
+    place = models.CharField(max_length=70, null=True, blank=True)
     photo = models.ImageField(upload_to='images/', null=True ,
         blank=True)
     # amount employer is willing to pay per hour

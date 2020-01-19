@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'Jobs.apps.JobsConfig',
     'taggit',
     'phonenumber_field',
+
+    
 ]
 
 MIDDLEWARE = [
@@ -128,3 +130,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
+

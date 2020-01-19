@@ -8,6 +8,7 @@ urlpatterns = [
     path('tag/<slug:tag_slug>/',
         views.index, name='post_list_by_tag'),
     path('register/', views.register, name='register'),
+    # path('accounts/', include('allauth.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 
 ]
