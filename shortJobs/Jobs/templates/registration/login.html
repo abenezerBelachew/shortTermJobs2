@@ -8,40 +8,19 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
 
 
-<h1 style="color:#4CAF50;text-align: center;">Log in</h1>
-
 <title>Login</title>
-<div style="text-align: center;">
-<div style="display: inline-block;">
+<div class="bg-dark" style="padding-top: 20px; padding-bottom: 20px;">
+<h1 class="display-4 text-center text-light">Log In</h1>
+</div>
+
+<div class="mx-auto" style="width: 400px; padding-top:30px;">
 <form method="POST">
     {% csrf_token %}
-
     {{ form|crispy }}
-    <button style="background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    width: 100px;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px; margin-bottom: 2px;" type="submit">Log In</button>
+    <button class="btn btn-dark" type="submit" style="width: 100%;">Log In</button>
     
-
 </form>
 
-<form action="{% url 'register' %}">
-    <button style="background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    width: 100px;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px; margin-bottom: 20px;" type="submit">Register</button>
+<a href="{% url 'register' %}" class="btn btn-dark" style="width: 100%;">Register</a>
 
-</form>
-
-</div>
 </div>
