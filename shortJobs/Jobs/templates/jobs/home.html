@@ -19,7 +19,14 @@
                     </div>
                 </div>
             </article>
-
+            <hr />
+            {% if user.is_authenticated %}
+            <h3>Logged In User: {{ user.username }} | <a href="{% url 'logout' %}">Logout</a></h3>  
+            <hr />
+            {% else %}
+            <a href="{% url 'register' %}">Register</a> | 
+            <a href="{% url 'login' %}">Login</a>
+            {% endif %}
             {% if tag %}
             <h3>Posts tagged with "{{ tag.name }}"</h3><br />
         {% endif %}
@@ -31,13 +38,19 @@
                             <strong>{{ post.date_posted }}</strong>
                             <br>{{ post.text }}<br />
                             <br>{{ post.description }}<br />
-                                {{ post.pay }}
+                                ${{ post.pay }}/hour
                             {% if post.photo %}
                             <img src="{{ post.photo.url}}" alt="{{ post.title }}" 
                             style="height:200px; width:200px;">
                             {% endif %}
 
                         </p>
+                        <div class="dropdown">
+                            <button class="dropbtn">Show Employer Contact</button>
+                            <div class="dropdown-content">
+                              <a href="tel:{{post.phone_number}}">{{ post.phone_number }}</a>
+                            </div>
+                          </div>
                         <p class="tags">
                             {% if post.tags.first %}
                             <hr />
@@ -53,6 +66,7 @@
                             {% endif %}
                         </p>
                     
+                        
                 </div>
             </article>
             {% endfor %}
@@ -63,6 +77,50 @@
     </section>
     <footer class="footer">
     </footer>
+
+    <style>
+    /* Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+    </style>
 </body>
 
 </html>
