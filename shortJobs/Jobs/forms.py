@@ -5,4 +5,4 @@ class JobPostForm(ModelForm):
     class Meta:
         model = JobPost
         fields = ['title', 'description', 'place',
-                'photo', 'pay', 'phone_number', 'tags']
+                'photo', 'file', 'pay', 'phone_number', 'tags']

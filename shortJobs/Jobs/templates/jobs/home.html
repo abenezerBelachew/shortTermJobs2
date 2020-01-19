@@ -48,6 +48,13 @@
                             style="height:200px; width:200px;"></a>
                             {% endif %}
 
+                            {% if post.file %}
+                            <br />
+                            <a href="{{ post.file.url }}" target="_blank">
+                                {{ post.file.name }} </a> |<br /> Size: {{ post.file.size|filesizeformat }}
+                            
+                            {% endif %}
+
                         </p>
                         <div class="dropdown">
                             <button class="dropbtn">Show Employer Contact</button>
